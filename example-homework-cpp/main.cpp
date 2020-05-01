@@ -9,13 +9,13 @@
 int main() {
     Homework hw;
 
-    hw.func_normal();
+    hw.method_normal();
 
-    hw.func_error();
+    hw.method_error();
 
-    hw.func_timeout();
+    hw.method_timeout();
 
-    hw.func_leak();
+    hw.method_leak();
 
     return 0;
 }

@@ -7,36 +7,39 @@
 #include "homework.hpp"
 
 #ifdef _WIN32
+
 #include <Windows.h>
+
 #else
 #include <unistd.h>
 #endif
 
 #include <iostream>
+#include <thread>
 #include <cstdlib>
 
-int Homework::func_normal() {
+int Homework::method_normal() {
     std::cout << "A normal method." << std::endl;
 
     return 0;
 }
 
-int Homework::func_error() {
+int Homework::method_error() {
     std::cout << "A method with segmentation fault." << std::endl;
 
-    int *p = 0;
+    int *p = nullptr;
     *p = 5;
     return 0;
 }
 
-int Homework::func_timeout() {
+int Homework::method_timeout() {
     std::cout << "A method with a timeout issue." << std::endl;
 
-    sleep(3600);
+    std::this_thread::sleep_for(std::chrono::seconds(3600));
     return 0;
 }
 
-int Homework::func_leak() {
+int Homework::method_leak() {
     std::cout << "A method with memory leak." << std::endl;
 
     void *ptr = malloc(4);

@@ -9,13 +9,13 @@
 
 class Homework {
 public:
-    int func_normal();
+    int method_normal();
 
-    int func_error();
+    int method_error();
 
-    int func_timeout();
+    int method_timeout();
 
-    int func_leak();
+    int method_leak();
 };
 
 #endif //EXAMPLE_HOMEWORK_HPP
